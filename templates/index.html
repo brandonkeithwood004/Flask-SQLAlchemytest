@@ -1,11 +1,41 @@
 {% extends 'base.html' %}
 
  {%block head %}
-
+<title>Task Master</title>
 {% endblock %}
 
 
 
 {%block body %}
-<h1>Template</h1>
+<h1 style="text-align: center">Task Master</h1>
+    <h1>Task Master</h1>
+{% if tasks length < 1 %}
+<h4 style="text-align: center">There are no tasks. Create one below!</h4>
+{% else %}
+
+<h4>There are no Tasks</h4>
+    <table>
+<tr>
+<th>Task</th>
+<th>Added</th>
+<th>Actions</th>
+
+</tr>
+{% for task in tasks  %}
+<tr>
+<td>{{ task.cotent }}</td>
+<td>{{ task.date_created.date() }}</td>
+<td>
+<a href="/delete/{{task.id}}"Delete></a></td>
+<br>
+<a href="/update/{{task.id}}"Update></td>
+</tr>
+{% end for %}
+</table>
+{% end if %}
+form action="/" method="POST"
+<input type="text" name="content"
+<input type="submit" value="Add Task">
+</form>
+</div>
 {% endblock %}
