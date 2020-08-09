@@ -1,32 +1,49 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Post</title>
+
+
+
+
+<title>Things</title>
 {% endblock %}
 
 {% block body %}
-<div class="content">
-    <h1 style="text-align: left">Post</h1>
-    {% if tasks|length < 1 %}
-    <h4 style="text-align: left">There are no tasks. Create one below!</h4>
-    {% else %}
-    <table>
-        <tr>
-            <th>Task</th>
-            <th>Added</th>
-            <th>Actions</th>
-        </tr>
-        {% for task in tasks %}
-            <tr>
-                <td>{{ task.content }}</td>
-                <td>{{ task.date_created.date() }}</td>
-                <td>
-                    <a href="/delete/{{task.id}}">Delete</a>
-                    <br>
-                    <a href="/update/{{task.id}}">Update</a>
-                </td>
-            </tr>
-        {% endfor %}
+
+<body>
+    <div id="login">
+        <h3 class="text-center text-white pt-5">Pivital Post Form </h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="" method="post">
+                           
+                            <img src="logo.jpg">
+                           <br>
+                           <br>
+                           <br>
+                            <h3 class="text-center text-info">Login</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Username:</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Password:</label><br>
+                                <input type="text" name="password" id="password" class="form-control">
+                            </div>
+                            <button type="button" onclick="pageRedirect()">Submit</button>
+
+                            </script>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+ {% endfor %}
     </table>
     {% endif %}
 
